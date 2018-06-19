@@ -1,0 +1,13 @@
+Feature,"NLIWOD QB",SINA
+"triple size=2",0.6361149061,0.7985842759
+"triple size=3",0.5159963033,0.1665428295
+"triple size=4",0.3780604192,0
+"resources=1",0.5354965316,0.344470061
+"resources=2",0.378,0
+"relations=1",0.4797790398,0.4033362931
+"relations=2",0.5021251857,0.04154682872
+"classes=0",0.4611795024,0.3064947061
+"classes=1",0.5428455189,0.1289735253
+"answer type=list",0.5608653463,0.3281073774
+"answer type=count",0.1410128193,0
+"answer type=boolean",0.4642,0
