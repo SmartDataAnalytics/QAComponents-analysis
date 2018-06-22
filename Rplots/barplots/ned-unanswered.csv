@@ -1,0 +1,13 @@
+Feature,number
+e=1,200
+e=2,10
+"e=1, implicit",165
+"e=1, explicit",35
+"E=1, lowercase & implicit",64
+"e=1, lowercase",79
+"e=1, uppercase",121
+"e=1, uppercase & implicit",100
+"e=1, wc=1",62
+"E=1, wc=2",74
+"E=1, wc=3",25
+"e=1, wc=4",39

@@ -16,57 +16,140 @@ loadData <- function(file) {
   input <- read.csv(file, sep = ',', row.names = 1)
 }
 
+# Visualize k-means clusters
+visualizeCluster <- function(d, df) {
+  fviz_cluster(d,
+               data = df,
+               palette = "Set1",
+               main = "",
+               xlab = NULL,
+               ylab = NULL,
+               ellipse.type = "euclid",
+               show.clust.cent = TRUE,
+               star.plot = TRUE, # Add segments from centroids to items
+               repel = TRUE, # Avoid label overplotting (slow)
+               labelsize = 16,
+               ggtheme = theme_minimal(base_size = 16)
+  )
+}
+
+visualizePCA <- function(pca) {
+  fviz_pca_var(pca,
+               geom = c("arrow", "text"),
+               repel = TRUE,
+               col.var = "steelblue",
+               select.var = list(contrib = 3),
+               alpha.var="contrib",
+               labelsize = 6,
+               ggtheme = theme_minimal(base_size = 16)
+  )
+}
+
 #########################################################
 ### cluster components with respect to F-values
 #########################################################
+
+# Cluster NED components
+#########################################################
+neddata = loadData("data/ned-fscore.csv")
+# Create matrix and transpose
+neddf <- t(as.matrix(neddata))
+
+# Find best value for k
+# The location of a bend (knee) in the plot is generally considered
+# as an indicator of the appropriate number of clusters.
+fviz_nbclust(neddf, kmeans, method = "wss") +
+  geom_vline(xintercept = 4, linetype = 2)
+
+# Compute k-means with k = 4
+set.seed(123)
+km1.res <- kmeans(neddf, 4, nstart = 25)
+
+# Visualize k-means clusters
+visualizeCluster(km1.res, neddf)
+dev.print(pdf, file = "ned-clustering-1.pdf")
+
+# Run Principal Component Analysis (PCA)
+neddf.pca <- prcomp(neddf,  scale = TRUE)
+
+# Visualize variables contributing most to PCA
+visualizePCA(neddf.pca)
+dev.print(pdf, file = "ned-pca-1.pdf")
+
+# Cluster RE components
+#########################################################
+reldata = loadData("data/rel-fscore.csv")
+# Remove rows with all values 0
+reldata <- reldata[!!rowSums(abs(reldata[-c(1:2)])),]
+
+reldf <- t(as.matrix(reldata))
+
+# Compute k-means with k = 2
+set.seed(123)
+km2.res <- kmeans(reldf, 2, nstart = 25)
+
+visualizeCluster(km2.res, reldf)
+dev.print(pdf, file = "rel-clustering-1.pdf")
+
+reldf.pca <- prcomp(reldf,  scale = TRUE)
+visualizePCA(reldf.pca)
+dev.print(pdf, file = "rel-pca-1.pdf")
+
+
 
 #########################################################
 ### cluster components with respect to questions
 #########################################################
 
-data = loadData("data/ned-fscore.csv")
-df <- as.matrix(data)
-df <- t(df)
+# Cluster NED components
+#########################################################
+neddata = loadData("data/ned-questions.csv")
+# Replace NA values with 0
+neddata[is.na(neddata)] <- 0
+# Remove rows with all values 0
+neddata <- neddata[!!rowSums(abs(neddata[-c(1:2)])),]
 
-# data("USArrests")      # Loading the data set
-# df <- scale(USArrests) # Scaling the data
-# View the firt 3 rows of the data
-# head(df, n = 3)
+# Create matrix and transpose
+neddf <- t(as.matrix(neddata))
 
-fviz_nbclust(df, kmeans, method = "wss") +
+# Find best value for k
+# The location of a bend (knee) in the plot is generally considered
+# as an indicator of the appropriate number of clusters.
+fviz_nbclust(neddf, kmeans, method = "wss") +
   geom_vline(xintercept = 4, linetype = 2)
 
 # Compute k-means with k = 4
 set.seed(123)
-km.res <- kmeans(df, 4, nstart = 25)
+km1.res <- kmeans(neddf, 4, nstart = 25)
 
-# Print the results
-print(km.res)
-
-# It’s possible to compute the mean of each variables by clusters using the original data:
-aggregate(USArrests, by=list(cluster=km.res$cluster), mean)
-
-# If you want to add the point classifications to the original data, use this:
-dd <- cbind(USArrests, cluster = km.res$cluster)
-
-# Cluster number for each of the observations
-km.res$cluster
-
-# Cluster size
-km.res$size
-
-# Cluster means
-km.res$centers
-head(dd)
-
+# Remove constant rows
+neddf <- neddf[ , apply(neddf, 2, var) != 0]
 # Visualize k-means clusters
-fviz_cluster(km.res, data = df,
-             palette = c("#2E9FDF", "#00AFBB", "#E7B800", "#FC4E07"), 
-             ellipse.type = "euclid", # Concentration ellipse
-             star.plot = TRUE, # Add segments from centroids to items
-             repel = TRUE, # Avoid label overplotting (slow)
-             ggtheme = theme_minimal()
-)
+visualizeCluster(km1.res, neddf)
+dev.print(pdf, file = "ned-clustering-2.pdf")
 
-dev.print(pdf, file = "clustering-1.pdf")
+# Run Principal Component Analysis (PCA)
+neddf.pca <- prcomp(neddf,  scale = TRUE)
+
+
+# Cluster RE components
+#########################################################
+reldata = loadData("data/rel-questions.csv")
+# Replace NA values with 0
+reldata[is.na(reldata)] <- 0
+# Remove rows with all values 0
+reldata <- reldata[!!rowSums(abs(reldata[-c(1:2)])),]
+
+reldf <- t(as.matrix(reldata))
+
+# Compute k-means with k = 2
+set.seed(123)
+km2.res <- kmeans(reldf, 2, nstart = 25)
+
+# Remove constant rows
+reldf <- reldf[ , apply(reldf, 2, var) != 0]
+
+visualizeCluster(km2.res, reldf)
+dev.print(pdf, file = "rel-clustering-2.pdf")
+
 dev.off()
