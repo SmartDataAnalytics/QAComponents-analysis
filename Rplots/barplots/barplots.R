@@ -24,7 +24,7 @@ library(ggplot2)
 plotbars <- function(data, ylab, title) {
   p <- ggplot(data = data,
               aes(x = feature, y = number)) +
-    xlab("") +
+    xlab(NULL) +
     ylab(ylab) +
     ggtitle(title) +
     geom_bar(stat = "identity",

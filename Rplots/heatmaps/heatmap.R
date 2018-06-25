@@ -85,10 +85,10 @@ plotHeatmap("data/", "rel", 1, 5, rellabels, 8, 3)
 
 # Class Component
 classlabels = c("OKBQA DM CLS", "CLSNLIWOD")
-plotHeatmap("data/", "class", 1, 2, classlabels, 3, 2)
+plotHeatmap("data/", "class", 1, 2, classlabels, 4, 3)
 
 # Query Builder
 qblabels = c("NLIWOD QB", "SINA")
-plotHeatmap("data/", "qb", 1, 2, qblabels, 4, 2)
+plotHeatmap("data/", "qb", 1, 2, qblabels, 5, 3)
 
 dev.off()
