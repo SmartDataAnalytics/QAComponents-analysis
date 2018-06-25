@@ -13,6 +13,7 @@ if (!require("RColorBrewer")) {
 library(pheatmap)
 library(RColorBrewer)
 
+
 #########################################################
 ### read data and transform it to matrix format
 #########################################################
@@ -29,6 +30,7 @@ loadData <- function(file, from, to) {
   input <- input[from:to,]
   return(data.matrix(input))
 }
+
 
 #########################################################
 ### create and save heatmap plot
@@ -59,6 +61,7 @@ plotHeatmap <- function(folder, fname, from, to, xlabels, w, h) {
   heatmap3 <- getHeatmap(fscore, xlabels)
   dev.print(pdf, file = paste0(fname, "-fscore.pdf"), width = w, height = h)
 }
+
 
 #########################################################
 ### print heatmaps

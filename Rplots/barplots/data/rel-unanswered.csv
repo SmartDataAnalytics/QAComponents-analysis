@@ -1,0 +1,8 @@
+feature,number
+r=1,510
+r=2,482
+"r=1, explicit",113
+"r=1, implicit",397
+"r=2, none explicit",286
+"r=2, one explicit",135
+"r=2, both explicit",61

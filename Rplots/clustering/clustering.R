@@ -1,12 +1,14 @@
 #########################################################
 ### install and load R packages
 #########################################################
+
 if (!require("factoextra")) {
   if(!require(devtools)) install.packages("devtools")
   devtools::install_github("kassambara/factoextra")
 }
 
 library(factoextra)
+
 
 #########################################################
 ### functions
@@ -44,6 +46,7 @@ visualizePCA <- function(pca) {
                ggtheme = theme_minimal(base_size = 16)
   )
 }
+
 
 #########################################################
 ### cluster components with respect to F-values

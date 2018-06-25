@@ -8,6 +8,7 @@ if (!require("ggplot2")) {
 
 library(ggplot2)
 
+
 #########################################################
 ### read data and transform it to data frame
 #########################################################
@@ -17,6 +18,7 @@ loadData <- function(file) {
 }
 
 datn = loadData("components.csv")
+
 
 #########################################################
 ### line plot
