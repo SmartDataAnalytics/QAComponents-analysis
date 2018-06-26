@@ -1,4 +1,4 @@
-QuestionID,AylienNER + AGDISTIS,Tagme NED,DBpedia NER + AGDISTIS,Ambiverse NED,MeaningCloud NER + AGDISTIS,DBpedia NED,MeaningCloud NED,Textrazor NER + AGDISTIS,Dandelion NER + AGDISTIS,Dandelion NED,Ontotext NED,Babelfy NER + AGDISTIS,Ambiverse NER + AGDISTIS,Tagme NER + AGDISTIS,EntityClassifier NER + AGDISTIS,Babelfy NED,Stanford NER + AGDISTIS,Ontotext NER + AGDISTIS,AmbiverseNED 2.0,AmbiverseNER 2.0 + AGDISTIS
+QuestionID,AylienNER + AGDISTIS,TagMe NED,DBpedia NER + AGDISTIS,Ambiverse NED,MeaningCloud NER + AGDISTIS,DBpedia NED,MeaningCloud NED,Textrazor NER + AGDISTIS,Dandelion NER + AGDISTIS,Dandelion NED,Ontotext NED,Babelfy NER + AGDISTIS,Ambiverse NER + AGDISTIS,Tagme NER + AGDISTIS,EntityClassifier NER + AGDISTIS,Babelfy NED,Stanford NER + AGDISTIS,Ontotext NER + AGDISTIS,AmbiverseNED 2.0,AmbiverseNER 2.0 + AGDISTIS
 10000,1,1,1,,,1,,1,1,1,1,,,1,1,1,1,1,1,
 10001,0.5,1,1,,1,1,0.5,1,1,1,1,,,1,1,0.5,0.5,,1,1
 10002,1,1,1,,,1,1,1,1,1,0,0,,1,1,0,,0,,

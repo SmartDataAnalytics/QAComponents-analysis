@@ -43,20 +43,20 @@ plotbars <- function(data, ylab, title) {
 # Unanswered questions per question type
 neddata <- read.csv("data/ned-unanswered.csv", sep = ',')
 plot1 <- plotbars(neddata, "Number of Questions", "NED") +
-  scale_y_continuous(limits = c(0, 850))
+  scale_y_continuous(limits = c(0, 900))
 
 reldata <- read.csv("data/rel-unanswered.csv", sep = ',')
 plot2 <- plotbars(reldata, "Number of Questions", "RE") +
-  scale_y_continuous(limits = c(0, 850))
+  scale_y_continuous(limits = c(0, 900))
 
 classdata <- read.csv("data/class-unanswered.csv", sep = ',')
-plot3 <- plotbars(classdata, "", "Class") +
-  scale_y_continuous(limits = c(0, 850)) +
-  theme(axis.title.x = element_text(margin = margin(t = 0, r = 0, b = 25, l = 0)))
+plot3 <- plotbars(classdata, "", "CL") +
+  scale_y_continuous(limits = c(0, 900)) +
+  theme(axis.text.x = element_text(margin = margin(t = 0, r = 0, b = 25, l = 0)))
 
 qbdata <- read.csv("data/qb-unanswered.csv", sep = ',')
 plot4 <- plotbars(qbdata, "", "QB") +
-  scale_y_continuous(limits = c(0, 850))
+  scale_y_continuous(limits = c(0, 900))
 
 pdf("unanswered-1.pdf")
 lay <- rbind(c(1,1,1,1,1),

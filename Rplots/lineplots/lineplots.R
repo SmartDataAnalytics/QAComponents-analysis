@@ -26,9 +26,8 @@ datn = loadData("components.csv")
 ggplot(data = datn,
        aes(x = Components, y = Questions, group = ComponentType, colour = ComponentType)) +
   geom_line(size = 2) +
-  geom_point(size = 3) +
-  labs(x = "Top-n QA Components", y= "Answered Questions", colour = "QA Component Type") +
-  scale_color_brewer(type = "div") +
+  geom_point(size = 4) +
+  labs(x = "n Components", y= "Processed Questions", colour = "QA Component Type") +
   theme_light() +
   theme(legend.position = "bottom",
         legend.text = element_text(size = 18),
