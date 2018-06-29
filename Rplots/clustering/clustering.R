@@ -15,7 +15,12 @@ library(factoextra)
 #########################################################
 
 loadData <- function(file) {
-  input <- read.csv(file, sep = ',', row.names = 1)
+  input <- read.csv(file,
+                    sep = ',',
+                    row.names = 1,
+                    check.names = F,
+                    as.is = T
+                    )
 }
 
 # Visualize k-means clusters
@@ -30,9 +35,9 @@ visualizeCluster <- function(d, df) {
                show.clust.cent = TRUE,
                star.plot = TRUE, # Add segments from centroids to items
                repel = TRUE, # Avoid label overplotting (slow)
-               labelsize = 16,
-               ggtheme = theme_minimal(base_size = 16)
-  )
+               labelsize = 18,
+               ggtheme = theme_minimal(base_size = 18)
+               )
 }
 
 visualizePCA <- function(pca) {

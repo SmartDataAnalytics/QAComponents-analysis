@@ -42,7 +42,7 @@ getHeatmap <- function(input_matrix, xlabels, hcolor) {
                             cluster_rows = FALSE,
                             cluster_cols = FALSE,
                             drop_levels = T,
-                            fontsize_row = 9,
+                            fontsize = 13,
                             labels_row = xlabels
                            )
   return(input_heatmap)
