@@ -80,30 +80,30 @@ plotFrequencies <- function(data, xlab, ylab) {
 
 # Unanswered questions per question type
 neddata <- read.csv("data/ned-unanswered.csv", sep = ',')
-plot1 <- plotUnansweredPerTask(neddata, "# of Questions", "NED", "#817f82") +
-  scale_y_continuous(limits = c(0, 900),
-                     breaks = c(50, 150, 300, 450, 600, 750))
+plot1 <- plotUnansweredPerTask(neddata, "# of Questions", "NED", "#817f82")
+  # scale_y_continuous(limits = c(0, 900),
+  #                    breaks = c(50, 150, 300, 450, 600, 750))
 
 reldata <- read.csv("data/rel-unanswered.csv", sep = ',')
-plot2 <- plotUnansweredPerTask(reldata, "# of Questions", "RL", "#b89685") +
-  scale_y_continuous(limits = c(0, 900),
-                     breaks = c(250, 500, 750))
+plot2 <- plotUnansweredPerTask(reldata, "# of Questions", "RL", "#b89685")
+  # scale_y_continuous(limits = c(0, 900),
+  #                    breaks = c(250, 500, 750))
 
 classdata <- read.csv("data/class-unanswered.csv", sep = ',')
 plot3 <- plotUnansweredPerTask(classdata, "", "CL", "#bcabae") +
-  scale_y_continuous(limits = c(0, 900),
-                     breaks = c(250, 500, 750)) +
-  theme(axis.text.x = element_text(margin = margin(t = 0, r = 0, b = 25, l = 0)))
+  # scale_y_continuous(limits = c(0, 900),
+  #                    breaks = c(250, 500, 750)) +
+  theme(axis.text.x = element_text(margin = margin(t = 0, r = 0, b = 25, l = 0, unit = "pt")))
 
 qbdata <- read.csv("data/qb-unanswered.csv", sep = ',')
-plot4 <- plotUnansweredPerTask(qbdata, "", "QB", "#322214") +
-  scale_y_continuous(limits = c(0, 900),
-                     breaks = c(250, 500, 750))
+plot4 <- plotUnansweredPerTask(qbdata, "", "QB", "#322214")
+  # scale_y_continuous(limits = c(0, 900),
+  #                    breaks = c(250, 500, 750))
 
 pdf("unanswered-1.pdf")
 lay <- rbind(c(1,1,1,1,1),
              c(2,2,3,4,4))
-grid.arrange(plot1, plot2, plot3, plot4, layout_matrix = lay, heights=c(7,4.5))
+grid.arrange(plot1, plot2, plot3, plot4, layout_matrix = lay, heights = c(6.5,4.5))
 
 # All unanswered questions
 allunanswered <- read.csv("data/unanswered.csv", sep = ',')
