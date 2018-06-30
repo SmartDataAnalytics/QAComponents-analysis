@@ -1,0 +1,63 @@
+task,feature,questions
+CL,"implicit class",188
+CL,"explicit class",394
+CL,"wc=0 or 1",440
+CL,wc=2,132
+CL,wc=3,10
+NED,"e=1",2301
+NED,"e=1, caps",1739
+NED,"e=1, no caps",558
+NED,"e=1, explicit",1692
+NED,"e=1, implicit",605
+NED,"e=1, special char",193
+NED,"e=1, no special char",2104
+NED,"e=1, words=1 or 1.5",570
+NED,"e=1, words=2 or 2.5",1070
+NED,"e=1, words=3 or 3.5",401
+NED,"e=1, words=4 or 4.5",131
+NED,"e=1, words=5 or more",117
+NED,e=2,947
+NED,"e=2, no caps",131
+NED,"e=2, one in caps",270
+NED,"e=2, all in caps",546
+NED,"e=2, explicit",529
+NED,"e=2, one explicit",341
+NED,"e=2, implicit",75
+NED,"e=2, no special char",811
+NED,"e=2, one with special char",118
+NED,"e=2, special char",18
+NED,"e=2, words=1 or 1.5",308
+NED,"e=2, words=2 or 2.5",475
+NED,"e=2, words=3 or 3.5",120
+NED,"e=2, words=4 or 4.5",42
+QB,"triple size=2",729
+QB,"triple size=3",1268
+QB,"triple size=4",1256
+QB,resources=1,2306
+QB,resources=2,947
+QB,relations=1,1815
+QB,relations=2,1438
+QB,classes=0,2112
+QB,classes=1,1140
+QB,"answer type=list",2421
+QB,"answer type=count",468
+QB,"answer type=boolean",364
+RL,rel=1,1361
+RL,rel=2,1439
+RL,"rel=1, explicit",619
+RL,"rel=1, implicit",743
+RL,"rel=1, present",1275
+RL,"rel=1, not present",38
+RL,"rel=1, wc=1",796
+RL,"rel=1, wc=2",431
+RL,"rel=1, wc>2",106
+RL,"rel=2, 0 hidden",1271
+RL,"rel=2, 1 hidden",157
+RL,"rel=2, 2 hidden",5
+RL,"rel=2, 0 explicit",607
+RL,"rel=2, 1 explicit",481
+RL,"rel=2, 2 explicit",351
+RL,"rel=2, av. wc=0.5",148
+RL,"rel=2, av. wc=1",770
+RL,"rel=2, av. wc=1.5",356
+RL,"rel=2, av. wc=2",161
