@@ -10,8 +10,8 @@ is given in the files.
 # Component Performance Aggregated
 This folder sums up the f-score values of the component per question feature for various QA tasks.
 
-#Top Count
+# Top Count
 This folder contains values of the number of questions answered by Top 1, top 2...top n components together for each task.
 
-#Unanswered
+# Unanswered
 This folder contains all the unanswered questions, and the associated question features.
