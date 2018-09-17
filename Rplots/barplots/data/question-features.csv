@@ -42,22 +42,19 @@ QB,classes=1,1140
 QB,"answer type=list",2421
 QB,"answer type=count",468
 QB,"answer type=boolean",364
-RL,rel=1,1361
-RL,rel=2,1439
-RL,"rel=1, explicit",619
+RL,rel=1,1390
+RL,rel=2,1863
+RL,"rel=1, explicit",767
 RL,"rel=1, implicit",743
-RL,"rel=1, present",1275
-RL,"rel=1, not present",38
-RL,"rel=1, wc=1",796
-RL,"rel=1, wc=2",431
-RL,"rel=1, wc>2",106
-RL,"rel=2, 0 hidden",1271
-RL,"rel=2, 1 hidden",157
-RL,"rel=2, 2 hidden",5
-RL,"rel=2, 0 explicit",607
-RL,"rel=2, 1 explicit",481
-RL,"rel=2, 2 explicit",351
-RL,"rel=2, av. wc=0.5",148
-RL,"rel=2, av. wc=1",770
-RL,"rel=2, av. wc=1.5",356
-RL,"rel=2, av. wc=2",161
+RL,"rel=1, not hidden",1369
+RL,"rel=1, hidden",21
+RL,"rel=1, wc=1",1014
+RL,"rel=1, wc>=2",322
+RL,"rel=2, 0 hidden",1800
+RL,"rel=2, 1 or 2 hidden",63
+RL,"rel=2, 0 explicit",719
+RL,"rel=2, 1 explicit",665
+RL,"rel=2, 2 explicit",479
+RL,"rel=2, av. wc=1",1266
+RL,"rel=2, av. wc=1.5",404
+RL,"rel=2, av. wc=2",186
