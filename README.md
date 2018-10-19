@@ -1,5 +1,5 @@
 # QAComponents-analysis
-This is the Github repository for the submitted VLDB paper "No One is Perfect: Analysing the Performance of Question Answering Components over the DBpedia Knowledge Graph".
+This is the Github repository for the submitted EDBT paper "No One is Perfect: Analysing the Performance of Question Answering Components over the DBpedia Knowledge Graph".
 Following are the folders in the repository for various experiments in the paper:
 
 # Component Performance
