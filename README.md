@@ -6,17 +6,15 @@ One can educate them in detail about Qanary methodology and its usage on: [Qanar
 
 For non-expert users, a majority of components are available to access via a web UI: [Frankenstein Web UI](http://frankenstein.qanary-qa.com/).
 
-# Component Performance
+The *RawData* folder contains all raw data produced in our experiments that have been used in the analysis. In particular, the raw data is organized in the following folders:
 
-This folder contains all the files of the different question Answering Tasks (QA Tasks). F-score for each question per component
+- *Component Performance*: This folder contains all the files of the different question Answering Tasks (QA Tasks). F-score for each question per component
 is given in the files.
 
-# Component Performance Aggregated
-This folder sums up the f-score values of the component per question feature for various QA tasks.
+- *Component Performance Aggregated*: This folder sums up the f-score values of the component per question feature for various QA tasks.
 
-# Top Count
-This folder contains values of the number of questions answered by Top 1, top 2...top n components together for each task.
+- *Top Count*: This folder contains values of the number of questions answered by Top 1, top 2...top n components together for each task.
 
-# Unanswered
-This folder contains all the unanswered questions, and the associated question features.
+- *Unanswered*: This folder contains all the unanswered questions, and the associated question features.
 
+Finally, the folder *Rplots* contains the R scripts used to generate the plots of the paper, as well as the generated plots in pdf format.
